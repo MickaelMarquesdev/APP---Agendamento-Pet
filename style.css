@@ -1,0 +1,300 @@
+:root {
+  /* Content (cores de texto) */
+  --content-primary: #ffffff;
+  --content-secondary: #98959d;
+  --content-tertiary: #666666;
+  --content-brand: #9282fa;
+
+  /* Background */
+  --background-primary: #151515;
+  --background-secondary: #1e1e1e;
+  --background-tertiary: #23242c;
+  --background-brand: #9282fa;
+  --background-highlights: #bdb4fa;
+
+  /* Border */
+  --border-primary: #3e3c41;
+  --border-secondary: #86818c;
+  --border-brand: #9282fa;
+  --border-divisor: #353339;
+
+  --font-title: "Inter Tight", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-primary);
+    color: var(--content-primary);
+    font-family: var(--font-body);
+}
+
+header {
+    display: inline-block;
+}
+
+header img {
+    height: 48px;
+    width: auto;
+    display: block;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 24px auto;
+    gap: 16px;
+}
+
+.titulo-agenda h2 {
+    font-family: var(--font-title);
+    font-size: 24px;
+}
+
+.titulo-agenda p {
+    color: var(--content-secondary);
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.input-data {
+    background-color: var(--background-secondary);
+    background-image: url("./assets/data-imagem.png");
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    background-size: 16px 16px;
+    padding: 8px 16px 8px 36px;
+    border: 1px solid var(--border-primary);
+    border-radius: 999px;
+    color: var(--content-primary);
+    font-family: var(--font-body);
+}
+
+.input-data::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.agenda {
+    max-width: 900px;
+    margin: 24px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.periodo {
+    background-color: var(--background-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.periodo-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px;
+    border-bottom: 1px solid var(--border-divisor);
+}
+
+.periodo-header h3 {
+    font-family: var(--font-title);
+    font-size: 16px;
+}
+
+.periodo-header span {
+    margin-left: auto;
+    color: var(--content-secondary);
+    font-size: 14px;
+}
+
+.periodo-header img {
+    height: 20px;
+    width: auto;
+}
+
+.lista-agendamentos {
+    list-style: none;
+}
+
+.agendamento {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 12px;
+    border-bottom: 1px solid var(--border-divisor);
+}
+
+.agendamento .horario {
+    font-weight: bold;
+    color: var(--content-primary);
+}
+
+.agendamento .servico {
+    color: var(--content-secondary);
+}
+
+.agendamento .remover {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: var(--content-secondary);
+    cursor: pointer;
+}
+
+.agendamento:last-child {
+    border-bottom: none;
+}
+
+.btn-novo-agendamento {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background-color: var(--background-brand);
+    color: black;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-agendar:hover,
+.btn-novo-agendamento:hover {
+  background-color: var(--background-highlights);
+}
+
+.modal input:hover,
+.modal textarea:hover,
+.input-data:hover {
+    border-color: var(--border-secondary);
+}
+
+.modal input:focus,
+.modal textarea:focus,
+.input-data:focus {
+    border-color: var(--background-brand);
+    outline: none;
+}
+
+.agendamento .remover:hover {
+    text-decoration: underline;
+}
+
+/* Modal de agendamento*/
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal-overlay.ativo {
+    display: flex;
+}
+
+.modal {
+    background-color: var(--background-tertiary);
+    border-radius: 12px;
+    padding: 24px;
+    width: 100%;
+    max-width: 420px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.modal label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.modal input, 
+.modal textarea {
+    width: 100%;
+    background-color: var(--background-primary);
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: var(--content-primary);
+    font-family: var(--font-body);
+    font-size: 14px;
+}
+
+.modal input {
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    background-size: 16px 16px;
+    padding-left: 36px;
+}
+
+#tutor {
+    background-image: url("./assets/tutor-agendamento.png");
+}
+
+#pet {
+    background-image: url("./assets/pet-agendamento.png");
+}
+
+#telefone {
+    background-image: url("./assets/telefone-agendamento.png");
+}
+
+#data {
+    background-image: url("./assets/data-imagem.png");
+}
+
+#hora {
+    background-image: url("./assets/hora-agendamento.png");
+}
+
+.modal textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+.linha-dupla {
+    display: flex;
+    gap: 16px;
+}
+
+.linha-dupla > div {
+    flex: 1;
+}
+
+.btn-agendar {
+    background-color: var(--background-brand);
+    color: black;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-left: auto;
+    display: block;
+}

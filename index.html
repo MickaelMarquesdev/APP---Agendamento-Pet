@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Pet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <img src="./assets/logo.png" alt="logo mundo pet">
+    </header>
+
+    <main>
+        <div class="titulo-agenda">
+            <h2> Sua agenda </h2>
+            <p>Aqui você pode ver todos os clientes e serviços agendados para hoje.</p>
+        </div>
+        
+        <input type="date" class="input-data">
+    </main>
+
+    <div class="agenda">
+
+        <section class="periodo">
+            <header class="periodo-header">
+                <img src="./assets/manha.png" alt="icone manha">
+                <h3>Manhã</h3>
+                <span>09h-12h</span>
+            </header>
+
+            <ul class="lista-agendamentos" id="lista-manha">
+            <!-- 
+                <li class="agendamento">
+                    <span class="horario">09:00</span>
+                    <strong>Thor</strong> / Fernanda Costa
+                    <span class="servico">Vacinação</span>
+                    <button class="remover">Remover agendamento</button>
+                </li>
+            -->    
+            </ul>
+        </section>
+
+        <section class="periodo">
+            <header class="periodo-header">
+                <img src="./assets/tarde.png" alt="icone tarde">
+                <h3>Tarde</h3>
+                <span>13h-18h</span>
+            </header>
+
+            <ul class="lista-agendamentos" id="lista-tarde">
+                <!-- 
+                <li class="agendamento">
+                    <span class="horario">13:00</span>
+                    <strong>Mel</strong> / João Souza
+                    <span class="servico">Corte de Unhas</span>
+                    <button class="remover">Remover agendamento</button>
+                </li>
+
+                <li class="agendamento">
+                    <span class="horario">14:00</span>
+                    <strong>Bella</strong> / Pedro Martins
+                    <span class="servico">Aplicação de Anti-pulgas</span>
+                    <button class="remover">Remover agendamento</button>
+                </li>
+
+                <li class="agendamento">
+                    <span class="horario">15:00</span>
+                    <strong>Simba</strong> / Juliana Rocha
+                    <span class="servico">Tosa Higiênica</span>
+                    <button class="remover">Remover agendamento</button>
+                </li>
+                -->
+            </ul>
+        </section>
+
+        <section class="periodo">
+            <header class="periodo-header">
+                <img src="./assets/noite.png" alt="icone noite">
+                <h3>Noite</h3>
+                <span>19h-21h</span>
+            </header>
+
+            <ul class="lista-agendamentos" id="lista-noite">
+                <!-- 
+                <li class="agendamento">
+                    <span class="horario">20:00</span>
+                    <strong>Max</strong> / Camila Santos
+                    <span class="servico">Limpeza de Dentes</span>
+                    <button class="remover">Remover agendamento</button>
+                </li>
+                -->
+            </ul>
+
+        </section>
+    </div>
+
+    <button class="btn-novo-agendamento">NOVO AGENDAMENTO</button>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <h2>Agende um atendimento</h2>
+            <p>Preencha os dados do cliente para realizar o agendamento:</p>
+
+            <form id="formAgendamento">
+                <label for="tutor">Nome do tutor</label>
+                <input type="text" id="tutor" placeholder="Nome do tutor" required>
+
+                <label for="pet">Nome do pet</label>
+                <input type="text" id="pet" placeholder="Nome do pet" required>
+
+                <label for="telefone">Telefone</label>
+                <input type="text" id="telefone" placeholder="(00) 0 0000-0000" required>
+
+                <label for="servico">Descrição do serviço</label>
+                <textarea id="servico" placeholder="ex: banho e tosa" required></textarea>
+
+                <div class="linha-dupla">
+                    <div>
+                        <label for="data">Data</label>
+                        <input type="date" id="data" required min="09:00" max="21:00">
+                    </div>
+
+                    <div>
+                        <label for="hora">Hora</label>
+                        <input type="time" id="hora" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-agendar">AGENDAR</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
